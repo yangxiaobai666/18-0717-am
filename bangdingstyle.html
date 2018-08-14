@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .con{
+            width: 300px;
+            height: 300px;
+            color: white;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+	<script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+    <div id = "box">
+        <input type="number" v-model="w">
+        <input type="number" v-model="h">        
+        <div :class="{'con':true}" :style="change">你雨哥还是你的雨哥</div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{ 
+                w:300,
+                h:300
+            },
+            computed:{
+                change(){
+                    return {width:this.w+"px",height:this.h+"px"}
+                }
+            }
+        })
+        
+    
+    </script>
+</body>
+</html>
